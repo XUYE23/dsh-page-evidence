@@ -36,7 +36,7 @@ node scripts/compare-upstream.mjs ../.research/dsh-docintel
 ## Remaining acceptance work
 
 - Full `dsh plugin add` → Web startup → model tool selection → uninstall workflow.
-- Linux and macOS runs; the included CI workflow is prepared for Linux and Windows and has not been run remotely.
+- The [CI workflow](https://github.com/XUYE23/dsh-page-evidence/actions/workflows/test.yml) runs the suite on Linux and Windows; consult its run results for the release's cross-platform status. macOS validation remains pending.
 - Real-user documents and a larger annotated corpus. OCR error rates, retrieval recall, and percentile latency have not been measured.
 - Sandboxed/remote DSH filesystem integration. The alpha reads a configured local root.
 - Automatic integration with DocIntel's existing index and UI. The current extraction API is independently consumable.

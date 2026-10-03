@@ -4,7 +4,7 @@
 
 **当前为本地实验性 alpha。** 已验证 Windows / Node 24、中英文 CPU OCR，以及 DSH `0.2.0-rc.2` 的真实工具运行时。完整 Web 安装流程、真实用户文档集与跨平台运行仍待验收。
 
-[English](README.md) · [需求与竞品证据](docs/research.md) · [验证记录](docs/validation.md)
+[在线演示](https://xuye23.github.io/dsh-page-evidence/) · [下载安装包](https://github.com/XUYE23/dsh-page-evidence/releases/tag/v0.1.0-alpha.1) · [English](README.md) · [需求与竞品证据](docs/research.md) · [验证记录](docs/validation.md)
 
 ## 已复现的问题
 
@@ -17,6 +17,8 @@
 需要 Node 24。在本目录运行：
 
 ```sh
+git clone https://github.com/XUYE23/dsh-page-evidence.git
+cd dsh-page-evidence
 npm ci --ignore-scripts
 npm run demo
 node src/cli.mjs test/fixtures/mixed-pages.pdf --ocr --query NEBULA
@@ -29,8 +31,9 @@ node src/cli.mjs test/fixtures/chinese-scan.pdf --ocr --language chi_sim --query
 
 ## 接入 DSH
 
+从 [GitHub Release](https://github.com/XUYE23/dsh-page-evidence/releases/tag/v0.1.0-alpha.1) 下载 `.tgz` 安装包，然后运行：
+
 ```sh
-npm pack
 dsh plugin --profile web add ./dsh-page-evidence-0.1.0-alpha.1.tgz
 ```
 

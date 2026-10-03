@@ -1,10 +1,12 @@
 # DSH Page Evidence
 
+[![Tests](https://github.com/XUYE23/dsh-page-evidence/actions/workflows/test.yml/badge.svg)](https://github.com/XUYE23/dsh-page-evidence/actions/workflows/test.yml)
+
 Read mixed text/scanned PDFs with visible coverage warnings, local CPU OCR, and quotes tied to physical page numbers.
 
 **Experimental alpha.** The initial corpus contains two synthetic PDFs. Tested with Node 24 on Windows and the published DSH `0.2.0-rc.2` tool runtime. Full DSH Web installation and real-user document evaluation remain pending. This is an independent community project.
 
-[中文](README.zh-CN.md) · [Demand and alternatives](docs/research.md) · [Validation](docs/validation.md)
+[Live demo](https://xuye23.github.io/dsh-page-evidence/) · [Download alpha](https://github.com/XUYE23/dsh-page-evidence/releases/tag/v0.1.0-alpha.1) · [中文](README.zh-CN.md) · [Demand and alternatives](docs/research.md) · [Validation](docs/validation.md)
 
 ## Why this exists
 
@@ -14,9 +16,11 @@ In a local reproduction of `dsh-docintel` at commit `7574023`, a mixed three-pag
 
 ## Try locally
 
-Requires Node 24+. From this checkout:
+Requires Node 24+. Clone the repository and run:
 
 ```sh
+git clone https://github.com/XUYE23/dsh-page-evidence.git
+cd dsh-page-evidence
 npm ci --ignore-scripts
 npm run demo
 node src/cli.mjs test/fixtures/mixed-pages.pdf --ocr --query NEBULA
@@ -27,10 +31,9 @@ Open `outputs/demo.html` for an interactive comparison built from the actual ext
 
 ## DSH plugin
 
-Build a tarball and add it to your chosen profile:
+Download `dsh-page-evidence-0.1.0-alpha.1.tgz` from the [alpha release](https://github.com/XUYE23/dsh-page-evidence/releases/tag/v0.1.0-alpha.1), then run:
 
 ```sh
-npm pack
 dsh plugin --profile web add ./dsh-page-evidence-0.1.0-alpha.1.tgz
 ```
 
