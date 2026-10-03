@@ -1,0 +1,31 @@
+{
+  "name": "dsh-page-evidence",
+  "version": "0.1.0-alpha.1",
+  "description": "Page-aware PDF evidence for DeepSeek Harness: expose unread pages, run optional local OCR, and preserve exact quote locations.",
+  "type": "module",
+  "license": "MIT",
+  "engines": { "node": ">=24.0.0" },
+  "main": "./src/plugin.mjs",
+  "exports": { ".": "./src/plugin.mjs", "./core": "./src/core.mjs", "./chunker": "./src/chunker.mjs" },
+  "bin": { "dsh-page-evidence": "./src/cli.mjs" },
+  "files": ["src", "docs", "cordis.patch.yml", "README.md", "README.zh-CN.md", "THIRD_PARTY_NOTICES.md", "LICENSE"],
+  "scripts": {
+    "test": "node --test test/*.test.mjs",
+    "test:host": "node --test test/host/*.test.mjs",
+    "demo": "node scripts/demo.mjs",
+    "test:ocr": "node --test test/ocr/*.test.mjs"
+  },
+  "dependencies": { "pdfjs-dist": "6.2.108", "@napi-rs/canvas": "1.0.10" },
+  "optionalDependencies": {
+    "tesseract.js": "7.0.0",
+    "@tesseract.js-data/eng": "1.0.0",
+    "@tesseract.js-data/chi_sim": "1.0.0"
+  },
+  "devDependencies": {
+    "@deepseek-ai/dsh-tools": "0.2.0-rc.2",
+    "@deepseek-ai/dsh-system-prompt": "0.2.0-rc.2"
+  },
+  "dsh": { "bundle": { "patch": "./cordis.patch.yml" } },
+  "keywords": ["deepseek-harness", "dsh", "pdf", "ocr", "rag", "citations"],
+  "repository": { "type": "git", "url": "git+https://github.com/XUYE23/dsh-page-evidence.git" }
+}
